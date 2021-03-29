@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    z-index: 2;
+}
+
+header{
+    box-shadow: 0 10px 10px 0 rgba(119, 118, 118, 0.5);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    z-index: 1;
+    background: #fdfffc;
+    font-weight: bold;
+}
+
+@media (max-width: 700px){
+    header{
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+.nav-item{
+    position: relative;
+    cursor: pointer;
+
+}
+
+.nav-item::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 5px solid #212529;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms ease-in-out;
+}
+
+.nav-item:hover::before{
+    transform: scaleX(1);
+}
+
+.nav--right::before{
+    border-bottom-color: darkcyan;
+}
+
+a[href="hex.html"]{
+    color: darkcyan;
+}
+
+
+
+/* Background */
+.background{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    gap: 5em;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.color-bar-info{
+    border-radius: 20px;
+    padding: .1em 1.25em;
+    font-size: 2.5rem;
+    background-color: #212529;
+    color: white;
+    font-weight: bold;
+}
+
+.change-color-button{
+    border: 5px solid #212529;
+    border-radius: 20px;
+    background: #e9ecef;
+    padding: .5em 1.25em;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: color 200ms ease-in-out;
+}
+
+.change-color-button:hover{
+    color: white;
+}
+
+.change-color-button::before{
+    content: '';
+    position: absolute; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #212529;
+    z-index: -1 ;
+    transform: scaleX(0);
+    transition: transform 200ms ease-in-out;
+}
+
+.change-color-button:hover::before{
+    transform: scaleX(1);
+}
+
+

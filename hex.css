@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    z-index: 2;
+}
+
+header{
+    box-shadow: 0 10px 10px 0 rgba(119, 118, 118, 0.5);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    z-index: 1;
+    background: #fdfffc;
+    font-weight: bold;
+}
+
+@media (max-width: 700px){
+    header{
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+.nav-item{
+    position: relative;
+    cursor: pointer;
+
+}
+
+.nav-item::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 5px solid #ced4da;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms ease-in-out;
+}
+
+.nav-item:hover::before{
+    transform: scaleX(1);
+}
+
+.nav--right::before{
+    border-bottom-color: darkcyan;
+}
+
+a[href="hex.html"]{
+    color: darkcyan;
+}
+
+
+
+/* Background */
+.background{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    gap: 3em;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    background-color: #343a40;
+}
+
+.background, button{
+    color: #343a40;
+}
+
+.color-bar-info{
+    border: 5px solid #343a40;
+    border-radius: 100px;
+    padding: .25em 1em;
+    font-size: 3rem;   
+    text-transform: uppercase;
+    background-color: #ced4da;
+    position: relative;
+
+}
+
+.color-bar-info::before{
+    content: ''; 
+    position: absolute;
+    border: 5px solid #ced4da;
+    border-radius: 100px;
+    top: calc(5px*-2);
+    right: calc(5px*-2);
+    bottom: calc(5px*-2);
+    left: calc(5px*-2);
+}
+
+.change-color-button{
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    background-color: #ced4da;
+    padding: .25em 1em;
+    font-size: 2rem;
+
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1em;
+    position: relative;
+}
+
+.change-color-button:active{
+    background-color: #1c1f22;
+    color: #ced4da;
+    border: 5px solid #ced4da;
+}
+
+.change-color-button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 5px solid #ced4da;
+    border-radius: 3px;
+    transition: top, left, bottom, right, 200ms ease-in-out;
+}
+
+.change-color-button:hover::before{
+    top: calc(5px*-2);
+    right: calc(5px*-2);
+    bottom: calc(5px*-2);
+    left: calc(5px*-2);
+}
+
+.change-color-button:active::before{
+    border: 5px solid #1c1f22;
+}
